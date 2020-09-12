@@ -1,13 +1,7 @@
-{% load static %}
+{% extends 'base_layout.html'}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>List</title>
-</head>
+
+{% block content %}
 <body>
     <h1>Articles List</h1>
     <div class="articles">
@@ -20,4 +14,4 @@
     {% endfor %}
     </div>
 </body>
-</html>
+{%endblock%}
