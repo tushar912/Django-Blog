@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.homepage),
     path('about/',views.about),
-    path('articles/',include('articles.urls'))
+    path('articles/',include(('articles.urls'),namespace='articl'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
