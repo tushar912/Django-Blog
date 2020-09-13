@@ -13,6 +13,7 @@ urlpatterns = [
     path('',views.homepage),
     path('about/',views.about),
     path('articles/',include(('articles.urls'),namespace='articl'))
+    path('accounts/',include('accounts.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
