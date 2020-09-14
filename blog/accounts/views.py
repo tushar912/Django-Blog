@@ -9,8 +9,13 @@ def signup_view(request):
              form.save()
              user = form.get_user()
              login(request, user)
-             #  log the user in
-             return redirect('articl:list')
+             user = form.get_user()
+             login(request, user)
+             if 'next' in request.POST:
+                 return redirect(request.POST.get('next'))
+                 
+             else:
+                 return redirect('articles:list')
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', { 'form': form })
